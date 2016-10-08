@@ -25,15 +25,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  })
+
+  .state('app.cargar', {
+    url: '/cargar',
     views: {
       'menuContent': {
         templateUrl: 'templates/search.html'
@@ -41,23 +47,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.consultar', {
+      url: '/consultar',
       views: {
         'menuContent': {
           templateUrl: 'templates/browse.html'
         }
       }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
+  })
+
+  .state('app.crear', {
+      url: '/crear',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/browse.html'
+        }
+      }
+  })
+
+  .state('app.salir', {
+      url: '/salir',
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
           controller: 'PlaylistsCtrl'
         }
       }
-    })
+  })
 
   .state('app.single', {
     url: '/playlists/:playlistId',
